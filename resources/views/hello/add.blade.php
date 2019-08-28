@@ -17,6 +17,7 @@
       <tr><th></th><td><input type="submit" value="send"></td></tr>
     </form>
   </table>
+@endsection
 
 @section('footer')
 copyright 2017 tuyano.
