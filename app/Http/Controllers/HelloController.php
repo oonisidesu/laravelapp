@@ -38,6 +38,7 @@ class HelloController extends Controller
     }
 
     public function edit(Request $request){
+        //　idが設定されていなければ、id=1のものを表示する
         if($request->id != null){
             $param = ['id' => $request->id];
             $item = DB::select('select * from people where id = :id', $param);
