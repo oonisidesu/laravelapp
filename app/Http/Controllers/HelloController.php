@@ -59,4 +59,22 @@ class HelloController extends Controller
         DB::update('update people set name = :name, mail = :mail, age =:age where id = :id', $param);
         return redirect('/hello');
     }
+
+    public function del(Request $request){
+        //　idが設定されていなければ、id=1のものを表示する
+        if($request->id != null){
+            $param = ['id' => $request->id];
+            $item = DB::select('select * from people where id = :id', $param);
+            return view('hello.del', ['form' => $item[0]]);
+        } else {
+            $item = DB::select('select * from people where id = 1');
+            return view('hello.del', ['form' => $item[0]]);
+        }
+    }
+
+    public function remove(Request $request){
+        $param = ['id' => $request->id];
+        DB::delete('delete from people where id = :id', $param);
+        return redirect('/hello');
+    }
 }
