@@ -15,7 +15,7 @@ class Person extends Model
     }
 
     public function scopeAgeGreaterThan($query, $n){
-        return $query->where('age', '>=', $n);
+        return $query->where('age', '>', $n);
     }
 
     public function scopeAgeLessThan($query, $n){
