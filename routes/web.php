@@ -31,3 +31,4 @@ Route::get('person/add', 'PersonController@add');
 Route::post('person/add', 'PersonController@create');
 Route::get('person/edit', 'PersonController@edit');
 Route::post('person/edit', 'PersonController@update');
+
