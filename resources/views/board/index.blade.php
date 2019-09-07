@@ -1,10 +1,10 @@
 @extends('layouts.helloapp')
 
-@section('title', 'Person.index')
+@section('title', 'Board.index')
 
 @section('menubar')
   @parent
-  インデックスページ
+  ボードページ
 @endsection
 
 @section('content')
@@ -13,11 +13,6 @@
     @foreach ($items as $item)
       <tr>
         <td>{{$item->getData()}}</td>
-        <td>
-          @if($item->board != null)
-            {{$item->getData()}}
-          @endif
-        </td>
       </tr>
     @endforeach
   </table>
