@@ -9,8 +9,13 @@ use Illuminate\Support\Facades\DB;
 class HelloController extends Controller
 {
     public function index(Request $request){
+        $user = Auth::user();
         $items = DB::table('people')->get();
-        return view('hello.index', ['items'=>$items]);
+        $param = [
+            'items' => $items,
+            'user' => $user
+            ];
+        return view('hello.index', $param);
     }
 
     public function post(Request $request){
